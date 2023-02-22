@@ -1,0 +1,62 @@
+HTML code:
+
+<div id="traffic-light">
+  <div id="red" class="bulb"></div>
+  <div id="yellow" class="bulb"></div>
+  <div id="green" class="bulb"></div>
+</div>
+
+
+CSS code:
+
+#traffic-light {
+  width: 100px;
+  height: 200px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.bulb {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+#red {
+  background-color: red;
+}
+
+#yellow {
+  background-color: yellow;
+}
+
+#green {
+  background-color: green;
+}
+
+
+JavaScript code:
+
+const red = document.getElementById("red");
+const yellow = document.getElementById("yellow");
+const green = document.getElementById("green");
+
+setInterval(() => {
+  if (red.style.backgroundColor === "red") {
+    red.style.backgroundColor = "gray";
+    yellow.style.backgroundColor = "yellow";
+  } else if (yellow.style.backgroundColor === "yellow") {
+    yellow.style.backgroundColor = "gray";
+    green.style.backgroundColor = "green";
+  } else if (green.style.backgroundColor === "green") {
+    green.style.backgroundColor = "gray";
+    red.style.backgroundColor = "red";
+  } else {
+    red.style.backgroundColor = "red";
+  }
+}, 3000);
